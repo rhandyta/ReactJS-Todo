@@ -21,7 +21,7 @@ function App() {
         setMessage("");
         if (edit.id) {
             const updatedTodo = {
-                id: edit.id,
+                ...edit,
                 activity,
             };
 
@@ -105,6 +105,7 @@ function App() {
                             <li key={todo.id}>
                                 <input
                                     type="checkbox"
+                                    checked={todo.done}
                                     onChange={doneTodoHandler.bind(this, todo)}
                                 />
                                 {todo.activity}(
